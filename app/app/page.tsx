@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-export default function IndexPage() {
+export default function LandingPage() {
   return (
     <div className="container flex flex-col gap-12 pb-8 pt-6 lg:h-[calc(100vh-4rem)] lg:flex-row lg:items-center lg:px-36">
       {/* Text with button */}
-      <section className="flex flex-col gap-8 lg:basis-1/2">
+      <section className="flex flex-col py-8 gap-8 lg:basis-1/2">
         <div className="flex flex-col max-w-[980px] items-start gap-4">
           <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
             🏆 Launch tournaments

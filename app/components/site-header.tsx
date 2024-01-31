@@ -5,6 +5,7 @@ import { Github } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 import { buttonVariants } from "./ui/button";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export function SiteHeader() {
   return (
@@ -19,6 +20,7 @@ export function SiteHeader() {
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
+          <ConnectButton />
           <nav className="flex items-center space-x-1">
             <Link
               href={siteConfig.links.github}

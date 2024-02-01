@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { CreateTournamentButton } from "@/components/create-tournament-button";
 import Image from "next/image";
 
 export default function LandingPage() {
@@ -18,7 +18,7 @@ export default function LandingPage() {
           </h1>
         </div>
         <div className="flex">
-          <Button size="lg">Create Tournament</Button>
+          <CreateTournamentButton />
         </div>
       </section>
       {/* Image */}

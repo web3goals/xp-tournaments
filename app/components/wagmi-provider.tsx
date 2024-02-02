@@ -3,10 +3,19 @@
 import { siteConfig } from "@/config/site";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
-import { configureChains, createConfig, mainnet, WagmiConfig } from "wagmi";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
-const { chains, publicClient } = configureChains([mainnet], [publicProvider()]);
+const { chains, publicClient } = configureChains(
+  [siteConfig.contracts.chain],
+  [
+    alchemyProvider({
+      apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY as string,
+    }),
+    publicProvider(),
+  ]
+);
 
 const { connectors } = getDefaultWallets({
   appName: siteConfig.name,

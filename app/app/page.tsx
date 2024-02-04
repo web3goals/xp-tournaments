@@ -20,6 +20,26 @@ export default function LandingPage() {
         <div className="flex">
           <CreateTournamentButton />
         </div>
+        <div>
+          <p className="text-muted-foreground">
+            Powered by{" "}
+            <a
+              href="https://www.lightlink.io/"
+              target="_blank"
+              className="font-medium text-primary underline underline-offset-4"
+            >
+              LightLink
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://xp.gg/"
+              target="_blank"
+              className="font-medium text-primary underline underline-offset-4"
+            >
+              xp.gg
+            </a>
+          </p>
+        </div>
       </section>
       {/* Image */}
       <section className="flex flex-col lg:basis-1/2 lg:items-center">

@@ -54,15 +54,14 @@ export function CreateTournamentForm() {
     contributionAmount: z.coerce.number().int().min(1),
   });
 
-  // TODO: Clear default values
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "The Great Tournament",
+      name: "",
       game: "1",
-      teamOnePlayers: "kiv1n",
-      teamTwoPlayers: "lexus",
-      contributionAmount: 5,
+      teamOnePlayers: "",
+      teamTwoPlayers: "",
+      contributionAmount: 2,
     },
   });
 
@@ -148,7 +147,7 @@ export function CreateTournamentForm() {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
+                    <SelectValue placeholder="Select a game" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -166,7 +165,7 @@ export function CreateTournamentForm() {
             <FormItem>
               <FormLabel>Team One Players</FormLabel>
               <FormControl>
-                <Textarea placeholder="kiv1n..." {...field} />
+                <Textarea placeholder={"kiv1n\n..."} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -179,7 +178,7 @@ export function CreateTournamentForm() {
             <FormItem>
               <FormLabel>Team Two Players</FormLabel>
               <FormControl>
-                <Textarea placeholder="lexus..." {...field} />
+                <Textarea placeholder={"lexus\n..."} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
